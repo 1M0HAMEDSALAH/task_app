@@ -30,6 +30,7 @@ class LoginScreen extends StatelessWidget {
                     content: Text('Success')
                 )
             );
+            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>const HomePage()), (route) => false);
           }
           if(state is LoginfailureState){
             ScaffoldMessenger
@@ -75,10 +76,10 @@ class LoginScreen extends StatelessWidget {
                             return null;
                           },
                           textAlign: TextAlign.right,
-                          decoration: const InputDecoration(
-                            suffixIcon: Icon(Icons.perm_identity,color: primaryColor,),
+                          decoration: InputDecoration(
+                            suffixIcon: Image.asset('assets/img/user.png'),
                             hintText: 'اسم المستخدم',
-                            border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                            border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                           ),
                         ),
                       ),
@@ -101,7 +102,7 @@ class LoginScreen extends StatelessWidget {
                             keyboardType: TextInputType.visiblePassword,
                             obscureText: LoginCubit.get(context).isonpassword,
                             decoration:  InputDecoration(
-                              suffixIcon: const Icon(Icons.lock,color: primaryColor,),
+                              suffixIcon: Image.asset('assets/img/password.png'),
                               hintText: '***********',
                               prefixIcon: IconButton(
                                 icon: Icon(LoginCubit.get(context).prefic),
@@ -145,14 +146,14 @@ class LoginScreen extends StatelessWidget {
                           builder: (context)=>MaterialButton(
                             onPressed: (){
                               if(FormKey.currentState!.validate()){
-                                // LoginCubit
-                                //     .get(context)
-                                //     .userlogin(
-                                //   email: emailContrilller.text,
-                                //   password: passwordContrilller.text,
-                                //   remember: false,
-                                // );
-                                Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> const HomePage() ), (route) => false);
+                                LoginCubit
+                                    .get(context)
+                                    .userlogin(
+                                  email: emailContrilller.text,
+                                  password: passwordContrilller.text,
+                                  remember: false,
+                                );
+                                //Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> const HomePage() ), (route) => false);
                               }
                             },
                             child:const Row(

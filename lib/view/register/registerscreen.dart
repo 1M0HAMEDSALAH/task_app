@@ -8,8 +8,15 @@ class registerscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var emailContrilller =TextEditingController();
-    var passwordContrilller =TextEditingController();
+    var FnameContrilller =TextEditingController();
+    var LnameContrilller =TextEditingController();
+    var TnameContrilller =TextEditingController();
+    var FamilynameContrilller =TextEditingController();
+    var BirthdayContrilller =TextEditingController();
+    var idExpiryDateContrilller =TextEditingController();
+    var EmailContrilller =TextEditingController();
+    var UsernameContrilller =TextEditingController();
+    var PasswordContrilller =TextEditingController();
     var FormKey =GlobalKey<FormState>();
 
     return Scaffold(
@@ -36,6 +43,7 @@ class registerscreen extends StatelessWidget {
                 height: 75,
                 child: Center(
                   child: TextFormField(
+                    controller: FnameContrilller,
                     textAlign: TextAlign.right,
                     keyboardType: TextInputType.name,
                     validator: (value){
@@ -44,10 +52,10 @@ class registerscreen extends StatelessWidget {
                       }
                       return null;
                     },
-                    decoration:  const InputDecoration(
-                      suffixIcon: Icon(Icons.person_remove_alt_1_outlined,color: primaryColor,),
+                    decoration: InputDecoration(
+                      suffixIcon: Image.asset('assets/img/id.png'),
                       hintText: 'الاســـم الاول',
-                      border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                      border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
                   ),
                 ),
@@ -58,6 +66,7 @@ class registerscreen extends StatelessWidget {
                 height: 75,
                 child: Center(
                   child: TextFormField(
+                    controller: LnameContrilller,
                     textAlign: TextAlign.right,
                     keyboardType: TextInputType.name,
                     validator: (value){
@@ -67,7 +76,7 @@ class registerscreen extends StatelessWidget {
                       return null;
                     },
                     decoration:  InputDecoration(
-                      suffixIcon: const Icon(Icons.person_remove_alt_1_outlined,color: primaryColor,),
+                      suffixIcon: Image.asset('assets/img/id.png'),
                       hintText: 'الاســــم الثاني',
                       border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
@@ -80,6 +89,7 @@ class registerscreen extends StatelessWidget {
                 height: 75,
                 child: Center(
                   child: TextFormField(
+                    controller: TnameContrilller,
                     textAlign: TextAlign.right,
                     keyboardType: TextInputType.name,
                     validator: (value){
@@ -89,7 +99,7 @@ class registerscreen extends StatelessWidget {
                       return null;
                     },
                     decoration:  InputDecoration(
-                      suffixIcon: const Icon(Icons.person_remove_alt_1_outlined,color: primaryColor,),
+                      suffixIcon: Image.asset('assets/img/id.png'),
                       hintText: 'اســـم الجد',
                       border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
@@ -102,6 +112,7 @@ class registerscreen extends StatelessWidget {
                 height: 75,
                 child: Center(
                   child: TextFormField(
+                    controller: FamilynameContrilller,
                     textAlign: TextAlign.right,
                     keyboardType: TextInputType.name,
                     validator: (value){
@@ -111,7 +122,7 @@ class registerscreen extends StatelessWidget {
                       return null;
                     },
                     decoration:  InputDecoration(
-                      suffixIcon: const Icon(Icons.person_remove_alt_1_outlined,color: primaryColor,),
+                      suffixIcon: Image.asset('assets/img/id.png'),
                       hintText: 'اسم العائلة',
                       border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
@@ -124,6 +135,7 @@ class registerscreen extends StatelessWidget {
                 height: 75,
                 child: Center(
                   child: TextFormField(
+                    controller: BirthdayContrilller,
                     textAlign: TextAlign.right,
                     keyboardType: TextInputType.text,
                     validator: (value){
@@ -133,7 +145,7 @@ class registerscreen extends StatelessWidget {
                       return null;
                     },
                     decoration:  InputDecoration(
-                      suffixIcon: const Icon(Icons.date_range_outlined,color: primaryColor,),
+                      suffixIcon: Image.asset('assets/img/DB.png'),
                       hintText: 'تاريخ الميلاد',
                       border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
@@ -155,7 +167,8 @@ class registerscreen extends StatelessWidget {
                       return null;
                     },
                     decoration:  InputDecoration(
-                      suffixIcon: const Icon(Icons.face_rounded,color: primaryColor,),
+                      suffixIcon: Image.asset('assets/img/face.png'),
+                      prefixIcon: Image.asset('assets/img/Repeat Grid 1.png'),
                       hintText: 'الصفة',
                       border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
@@ -177,7 +190,7 @@ class registerscreen extends StatelessWidget {
                       return null;
                     },
                     decoration:  InputDecoration(
-                      suffixIcon: const Icon(Icons.phone,color: primaryColor,),
+                      suffixIcon: Image.asset('assets/img/phone.png'),
                       hintText: 'رقم الجوال',
                       border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
@@ -190,6 +203,7 @@ class registerscreen extends StatelessWidget {
                 height: 75,
                 child: Center(
                   child: TextFormField(
+                    controller: idExpiryDateContrilller,
                     textAlign: TextAlign.right,
                     keyboardType: TextInputType.datetime,
                     validator: (value){
@@ -199,7 +213,7 @@ class registerscreen extends StatelessWidget {
                       return null;
                     },
                     decoration:  InputDecoration(
-                      suffixIcon: const Icon(Icons.date_range_outlined,color: primaryColor,),
+                      suffixIcon: Image.asset('assets/img/DB.png'),
                       hintText: 'تاريخ انتهاء السجل',
                       border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
@@ -212,6 +226,7 @@ class registerscreen extends StatelessWidget {
                 height: 75,
                 child: Center(
                   child: TextFormField(
+                    controller: EmailContrilller,
                     textAlign: TextAlign.right,
                     keyboardType: TextInputType.emailAddress,
                     validator: (value){
@@ -221,7 +236,7 @@ class registerscreen extends StatelessWidget {
                       return null;
                     },
                     decoration:  InputDecoration(
-                      suffixIcon: const Icon(Icons.email_outlined,color: primaryColor,),
+                      suffixIcon: Image.asset('assets/img/email.png'),
                       hintText: 'البريد الالكتروني',
                       border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
@@ -232,21 +247,21 @@ class registerscreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text('انثي'),
+                  const Text('انثي'),
                   Checkbox(
-                    shape: CircleBorder(),
+                    shape: const CircleBorder(),
                     value: false,
                     activeColor: primaryColor,
                     onChanged: (value) {  },
                   ),
-                  Text('ذكر'),
+                  const Text('ذكر'),
                   Checkbox(
-                    shape: CircleBorder(),
+                    shape: const CircleBorder(),
                     value: true,
                     activeColor: primaryColor,
                     onChanged: (value) {  },
                   ),
-                  SizedBox(width: 24,),
+                  const SizedBox(width: 24,),
                 ],
               ),
               const SizedBox(height: 8,),
@@ -255,6 +270,7 @@ class registerscreen extends StatelessWidget {
                 height: 75,
                 child: Center(
                   child: TextFormField(
+                    controller: UsernameContrilller,
                     textAlign: TextAlign.right,
                     keyboardType: TextInputType.name,
                     validator: (value){
@@ -264,7 +280,7 @@ class registerscreen extends StatelessWidget {
                       return null;
                     },
                     decoration:  InputDecoration(
-                      suffixIcon: const Icon(Icons.person,color: primaryColor,),
+                      suffixIcon: Image.asset('assets/img/user.png'),
                       hintText: 'اسم المستخدم',
                       border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
@@ -277,6 +293,7 @@ class registerscreen extends StatelessWidget {
                 height: 75,
                 child: Center(
                   child: TextFormField(
+                    controller: PasswordContrilller,
                     textAlign: TextAlign.right,
                     keyboardType: TextInputType.visiblePassword,
                     validator: (value){
@@ -286,7 +303,7 @@ class registerscreen extends StatelessWidget {
                       return null;
                     },
                     decoration:  InputDecoration(
-                      suffixIcon: const Icon(Icons.lock,color: primaryColor,),
+                      suffixIcon: Image.asset('assets/img/password.png'),
                       hintText: 'كلمة المرور',
                       border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                     ),
@@ -302,12 +319,10 @@ class registerscreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: MaterialButton(
-                  onPressed: ()
+                  onPressed:()
                   {
                   if(FormKey.currentState!.validate())
-                  {
-
-                  }
+                  {}
                   },
                   child:const Row(
                     mainAxisAlignment: MainAxisAlignment.center,

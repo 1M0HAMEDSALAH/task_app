@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:taskproject/models/loginmodel.dart';
 import 'package:taskproject/view/home/homepaged.dart';
 import 'package:taskproject/view/login/Cubit/states.dart';
 
@@ -8,6 +9,8 @@ class LoginCubit extends Cubit<Loginstate>{
   LoginCubit(): super(LoginInitalState());
   static LoginCubit get(context)=>BlocProvider.of(context);
 
+
+  late LoginModel LoginData;
 
   IconData prefic = Icons.visibility_outlined;
   bool isonpassword = true;
@@ -49,7 +52,9 @@ class LoginCubit extends Cubit<Loginstate>{
     )
         .then((value)
     {
-      print(value);
+      LoginData = LoginModel.fromJson(value.data);
+      print(LoginData.partyName);
+      print(LoginData.imagePath);
       emit(LoginSuccessState());
     })
         .catchError((error){
